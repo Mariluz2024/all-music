@@ -2,7 +2,7 @@ import React from 'react';
 import Logo from '../components/Logo.jsx';
 import Navbar from '../components/Navbar.jsx';
 import Playlist from '../components/Playlist.jsx';
-import Reproductor from '../components/Reproductor.jsx';
+import Reproductor from '../components/Player.jsx';
 
 const Principal = () => {
   return (
