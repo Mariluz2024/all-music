@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { getDataDetails } from "../api";
+import { getDataDetails, deleteSongFromPlaylist } from "../api";
 import SongCard from "./SongCard";
 
 const Playlist = ({ playlistId = 1, onPlay }) => {
@@ -26,6 +26,12 @@ const Playlist = ({ playlistId = 1, onPlay }) => {
     onPlay(id);
   };
 
+  // boton que responde a eliminar
+  const handleRemoveFromPlaylist = (songId) => {
+    console.log("songId", songId);
+    deleteSongFromPlaylist(playlistId, songId);
+  };
+
   return (
     <div className="container mt-3">
       <h4 className="mb-3 fw-bold">{playlist.name}</h4>
@@ -36,6 +42,8 @@ const Playlist = ({ playlistId = 1, onPlay }) => {
               image={song.image || "https://via.placeholder.com/80"}
               title={song.title}
               artist={song.artist}
+              songId={song.id}
+              removeFromPlaylist={handleRemoveFromPlaylist}
             />
           </div>
         ))}

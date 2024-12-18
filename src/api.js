@@ -19,3 +19,8 @@ export const putData = (endpoint, id, data) =>
 // DELETE: Eliminar un recurso
 export const deleteData = (endpoint, id) =>
   axios.delete(`${BASE_URL}/${endpoint}/${id}`);
+
+
+// DELETE: Eliminar un recurso
+export const deleteSongFromPlaylist = (playlistId, songId) =>
+  axios.delete(`${BASE_URL}/playlist/${playlistId}/remove-song/${songId}`);

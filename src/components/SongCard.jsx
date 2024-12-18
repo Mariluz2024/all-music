@@ -1,6 +1,6 @@
 import React from "react";
 
-const SongCard = ({ image, title, artist }) => {
+const SongCard = ({ image, title, artist, songId, removeFromPlaylist }) => {
   return (
     <div
       className="d-flex align-items-center bg-dark text-white p-2 mb-2 rounded position-relative"
@@ -51,10 +51,10 @@ const SongCard = ({ image, title, artist }) => {
               className="dropdown-item"
               onClick={(e) => {
                 e.stopPropagation();
-                alert("Opción 1 seleccionada");
+                removeFromPlaylist(songId)
               }}
             >
-              Opción 1
+              Eliminar
             </button>
           </li>
           <li>
