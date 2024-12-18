@@ -24,11 +24,12 @@ const Playlists = ({ onPlaylistSelect }) => {
   };
 
   // Función para eliminar una playlist
-  const handleDeletePlaylist = (playlistId) => {
+  const handleDeletePlaylist = async (playlistId) => {
+    await deleteData('playlists', playlistId)
+
     setPlaylists((prevPlaylists) =>
       prevPlaylists.filter((playlist) => playlist.id !== playlistId)
     );
-    console.log(`Playlist eliminada: ${playlistId}`);
   };
 
   // Función para editar una playlist

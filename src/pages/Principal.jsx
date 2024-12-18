@@ -41,7 +41,6 @@ const Principal = () => {
 
         {/* Columna del medio: Lista de reproducción */}
         <div className="col-md-3 col-12 bg-info p-3">
-          <h5 className="fw-bold">Lista de reproducción</h5>
           <Playlist playlistId={playlistId} onPlay={handlePlay} />
         </div>
 

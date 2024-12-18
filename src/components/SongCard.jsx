@@ -18,8 +18,12 @@ const SongCard = ({ image, title, artist, songId, removeFromPlaylist }) => {
 
       {/* Información de la canción */}
       <div>
-        <h5 className="mb-0">{title}</h5>
-        <p className="mb-0 text-info">{artist}</p>
+        <h5 className="mb-0" style={{ fontSize: 14 }}>
+          {title}
+        </h5>
+        <p className="mb-0 text-info" style={{ fontSize: 13 }}>
+          {artist}
+        </p>
       </div>
 
       {/* Menú contextual */}
@@ -65,18 +69,7 @@ const SongCard = ({ image, title, artist, songId, removeFromPlaylist }) => {
                 alert("Opción 2 seleccionada");
               }}
             >
-              Option 2
-            </button>
-          </li>
-          <li>
-            <button
-              className="dropdown-item"
-              onClick={(e) => {
-                e.stopPropagation();
-                alert("Opción 3 seleccionada");
-              }}
-            >
-              Option 3
+              Move to playlist
             </button>
           </li>
         </ul>
