@@ -40,3 +40,9 @@
 .read-the-docs {
   color: #888;
 }
+
+
+/* Eliminar el triángulo del botón dropdown-toggle */
+.dropdown-toggle::after {
+  display: none !important;
+}
