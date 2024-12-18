@@ -3,6 +3,7 @@ import axios from "axios";
 const BASE_URL = "http://localhost:3000";
 
 // GET: Obtener datos
+// trae todos los datos de canciones y de listas, del server
 export const getData = (endpoint) => axios.get(`${BASE_URL}/${endpoint}`);
 
 export const getDataDetails = (endpoint, id) => axios.get(`${BASE_URL}/${endpoint}/${id}/details`);

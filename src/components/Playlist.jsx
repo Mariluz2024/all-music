@@ -1,42 +1,45 @@
 import React, { useEffect, useState } from "react";
-import { getDataDetails } from "../api"; // Importar la función getDataDetails
+import { getDataDetails } from "../api";
+import SongCard from "./SongCard";
 
 const Playlist = ({ playlistId = 1, onPlay }) => {
-  const [playlist, setPlaylist] = useState(null); // Estado para almacenar la playlist completa
+  const [playlist, setPlaylist] = useState(null);
 
   useEffect(() => {
     const fetchPlaylistDetail = async () => {
       try {
-        const response = await getDataDetails("playlists", playlistId); // Llamada al endpoint
-        setPlaylist(response["data"]); // Guardar los datos en el estado
+        const response = await getDataDetails("playlists", playlistId);
+        setPlaylist(response["data"]);
       } catch (error) {
         console.error("Error al obtener la playlist:", error);
       }
     };
 
     fetchPlaylistDetail();
-  }, [playlistId]); // Reejecutar si cambia el id de la playlist
+  }, [playlistId]);
 
-  // Verificar si los datos están cargados
   if (!playlist) {
-    return <div>Cargando playlist...</div>;
+    return <div className="text-center mt-3">Cargando playlist...</div>;
   }
 
   const play = (id) => {
-    onPlay(id); // Emitir el evento con el arreglo 'songs'
+    onPlay(id);
   };
 
   return (
-    <div>
-      <h5>{playlist.name}</h5> {/* Nombre de la playlist */}
-      <ul className="list-unstyled">
+    <div className="container mt-3">
+      <h4 className="mb-3 fw-bold">{playlist.name}</h4>
+      <div>
         {playlist.songs.map((song) => (
-          <li key={song.id} onClick={() => play(song.id)}>
-            <strong>{song.title}</strong> - {song.artist}{" "}
-            {/* Mostrar título y artista */}
-          </li>
+          <div key={song.id} onClick={() => play(song.id)}>
+            <SongCard
+              image={song.image || "https://via.placeholder.com/80"}
+              title={song.title}
+              artist={song.artist}
+            />
+          </div>
         ))}
-      </ul>
+      </div>
     </div>
   );
 };
