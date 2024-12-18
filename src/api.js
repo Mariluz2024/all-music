@@ -5,6 +5,8 @@ const BASE_URL = "http://localhost:3000";
 // GET: Obtener datos
 export const getData = (endpoint) => axios.get(`${BASE_URL}/${endpoint}`);
 
+export const getDataDetails = (endpoint, id) => axios.get(`${BASE_URL}/${endpoint}/${id}/details`);
+
 // POST: Crear un recurso
 export const postData = (endpoint, data) =>
   axios.post(`${BASE_URL}/${endpoint}`, data);
