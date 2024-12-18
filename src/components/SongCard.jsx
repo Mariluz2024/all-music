@@ -51,10 +51,10 @@ const SongCard = ({ image, title, artist, songId, removeFromPlaylist }) => {
               className="dropdown-item"
               onClick={(e) => {
                 e.stopPropagation();
-                removeFromPlaylist(songId)
+                removeFromPlaylist(songId);
               }}
             >
-              Eliminar
+              Delete
             </button>
           </li>
           <li>
@@ -65,7 +65,7 @@ const SongCard = ({ image, title, artist, songId, removeFromPlaylist }) => {
                 alert("Opción 2 seleccionada");
               }}
             >
-              Opción 2
+              Option 2
             </button>
           </li>
           <li>
@@ -76,7 +76,7 @@ const SongCard = ({ image, title, artist, songId, removeFromPlaylist }) => {
                 alert("Opción 3 seleccionada");
               }}
             >
-              Opción 3
+              Option 3
             </button>
           </li>
         </ul>

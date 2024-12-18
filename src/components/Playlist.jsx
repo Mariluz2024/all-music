@@ -27,9 +27,14 @@ const Playlist = ({ playlistId = 1, onPlay }) => {
   };
 
   // boton que responde a eliminar
-  const handleRemoveFromPlaylist = (songId) => {
+  const handleRemoveFromPlaylist = async (songId) => {
     console.log("songId", songId);
-    deleteSongFromPlaylist(playlistId, songId);
+    await deleteSongFromPlaylist(playlistId, songId);
+
+    setPlaylist((prevPlaylist) => ({
+      ...prevPlaylist,
+      songs: prevPlaylist.songs.filter((song) => song.id !== songId),
+    }));
   };
 
   return (
