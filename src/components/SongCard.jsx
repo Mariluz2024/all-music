@@ -2,7 +2,10 @@ import React from "react";
 
 const SongCard = ({ image, title, artist }) => {
   return (
-    <div className="d-flex align-items-center bg-dark text-white p-2 mb-2 rounded position-relative">
+    <div
+      className="d-flex align-items-center bg-dark text-white p-2 mb-2 rounded position-relative"
+      style={{ cursor: "pointer" }}
+    >
       {/* Imagen */}
       <div className="me-3">
         <img
@@ -19,7 +22,7 @@ const SongCard = ({ image, title, artist }) => {
         <p className="mb-0 text-info">{artist}</p>
       </div>
 
-      {/* Menú contextual (tres puntos en esquina inferior derecha) */}
+      {/* Menú contextual */}
       <div
         className="dropdown position-absolute"
         style={{ bottom: "10px", right: "10px" }}
@@ -35,6 +38,7 @@ const SongCard = ({ image, title, artist }) => {
             backgroundColor: "transparent",
             boxShadow: "none",
           }}
+          onClick={(e) => e.stopPropagation()} // Detener propagación
         >
           <span style={{ fontSize: "1.2rem", verticalAlign: "middle" }}>⋮</span>
         </button>
@@ -45,7 +49,10 @@ const SongCard = ({ image, title, artist }) => {
           <li>
             <button
               className="dropdown-item"
-              onClick={() => alert("Opción 1 seleccionada")}
+              onClick={(e) => {
+                e.stopPropagation();
+                alert("Opción 1 seleccionada");
+              }}
             >
               Opción 1
             </button>
@@ -53,7 +60,10 @@ const SongCard = ({ image, title, artist }) => {
           <li>
             <button
               className="dropdown-item"
-              onClick={() => alert("Opción 2 seleccionada")}
+              onClick={(e) => {
+                e.stopPropagation();
+                alert("Opción 2 seleccionada");
+              }}
             >
               Opción 2
             </button>
@@ -61,7 +71,10 @@ const SongCard = ({ image, title, artist }) => {
           <li>
             <button
               className="dropdown-item"
-              onClick={() => alert("Opción 3 seleccionada")}
+              onClick={(e) => {
+                e.stopPropagation();
+                alert("Opción 3 seleccionada");
+              }}
             >
               Opción 3
             </button>
