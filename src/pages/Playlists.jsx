@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { getData } from "../api"; // Importar la función getData
+import { getData, deleteData } from "../api"; // Importar la función getData
 import PlaylistCard from "../components/PlaylistCard"; // Importar el nuevo componente
 
 const Playlists = ({ onPlaylistSelect }) => {

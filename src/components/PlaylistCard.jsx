@@ -4,15 +4,17 @@ const PlaylistCard = ({ name, songCount, onClick, onDelete, onEdit }) => {
   return (
     <div
       className="card mb-2 shadow-sm position-relative"
-      style={{ cursor: "pointer" }}
+      style={{ cursor: "pointer", minHeight: "100px" }} // Altura mínima
       onClick={onClick}
     >
-      <div className="card-body d-flex justify-content-between align-items-center">
+      <div className="card-body d-flex flex-column justify-content-between">
         {/* Nombre de la playlist */}
-        <h5 className="card-title mb-0">{name}</h5>
+        <h5 className="card-title mb-3" style={{ fontSize: 14}}>{name}</h5>
 
         {/* Cantidad de canciones */}
-        <span className="badge bg-primary">{songCount} canciones</span>
+        <span className="badge bg-primary align-self-start">
+          {songCount} canciones
+        </span>
       </div>
 
       {/* Menú contextual: tres puntos verticales */}
@@ -33,7 +35,7 @@ const PlaylistCard = ({ name, songCount, onClick, onDelete, onEdit }) => {
           }}
           onClick={(e) => e.stopPropagation()} // Detener propagación
         >
-          <span style={{ fontSize: "1.2rem", verticalAlign: "middle" }}>⋮</span>
+          <span style={{ fontSize: "1.2rem", verticalAlign: "middle", color: 'black' }}>⋮</span>
         </button>
         <ul
           className="dropdown-menu dropdown-menu-end"
@@ -59,17 +61,6 @@ const PlaylistCard = ({ name, songCount, onClick, onDelete, onEdit }) => {
               }}
             >
               Edit
-            </button>
-          </li>
-          <li>
-            <button
-              className="dropdown-item"
-              onClick={(e) => {
-                e.stopPropagation();
-                alert("Opción 3 seleccionada");
-              }}
-            >
-              Option 3
             </button>
           </li>
         </ul>
