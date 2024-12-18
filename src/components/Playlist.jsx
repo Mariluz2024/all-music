@@ -1,6 +1,6 @@
 import React from "react";
 
-const Playlist = ({ songs }) => {
+const Playlist = ({ playlistId }) => {
   return (
     <div>
       <h5>Listas de reproducción</h5>

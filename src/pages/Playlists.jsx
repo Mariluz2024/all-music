@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { getData } from "../api"; // Importar la función getData
 
-const Playlists = ({ onPlaylistClick }) => {
+const Playlists = ({ onPlaylistSelect }) => {
   const [playlists, setPlaylists] = useState([]); // Estado para almacenar los datos
 
   // Llamar a getData al cargar el componente

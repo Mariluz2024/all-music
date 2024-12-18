@@ -31,13 +31,13 @@ const Principal = () => {
         {/* Columna izquierda: Listas de reproducción */}
         <div className="col-md-3 col-12 bg-warning p-3">
           <h5 className="fw-bold">Listas de reproducción</h5>
-          <Playlists onPlaylistClick={handlePlaylistClick} />
+          <Playlists onPlaylistSelect={handlePlaylistClick} />
         </div>
 
         {/* Columna del medio: Lista de reproducción */}
         <div className="col-md-3 col-12 bg-info p-3">
           <h5 className="fw-bold">Lista de reproducción</h5>
-          <Playlist songs={playlistId} />
+          <Playlist playlistId={playlistId} />
         </div>
 
         {/* Columna derecha: Player */}
