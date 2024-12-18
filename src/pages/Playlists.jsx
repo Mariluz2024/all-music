@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { getData } from "../api"; // Importar la función getData
+import PlaylistCard from "../components/PlaylistCard"; // Importar el nuevo componente
 
 const Playlists = ({ onPlaylistSelect }) => {
   const [playlists, setPlaylists] = useState([]); // Estado para almacenar los datos
 
-  // Llamar a getData al cargar el componente
   useEffect(() => {
     const fetchPlaylists = async () => {
       try {
@@ -20,25 +20,20 @@ const Playlists = ({ onPlaylistSelect }) => {
     fetchPlaylists();
   }, []);
 
-  // Función para manejar el clic en una playlist
   const handlePlaylistClick = (id) => {
     onPlaylistSelect(id); // Emitir el evento con el arreglo 'songs'
   };
 
   return (
     <div className="container mt-2">
-      <ul className="list-unstyled">
-        {playlists.map((playlist) => (
-          <li
-            key={playlist.id}
-            className="mb-2 list-group-item list-group-item-action"
-            onClick={() => handlePlaylistClick(playlist.id)} // Enviar el arreglo "songs"
-            style={{ cursor: "pointer" }}
-          >
-            {playlist.name}
-          </li>
-        ))}
-      </ul>
+      {playlists.map((playlist) => (
+        <PlaylistCard
+          key={playlist.id}
+          name={playlist.name}
+          songCount={playlist.videos.length} // Pasar la cantidad de canciones
+          onClick={() => handlePlaylistClick(playlist.id)} // Acción al hacer clic
+        />
+      ))}
     </div>
   );
 };
