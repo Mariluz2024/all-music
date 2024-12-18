@@ -1,9 +1,9 @@
 import React from "react";
 
-const PlaylistCard = ({ name, songCount, onClick }) => {
+const PlaylistCard = ({ name, songCount, onClick, onDelete, onEdit }) => {
   return (
     <div
-      className="card mb-2 shadow-sm"
+      className="card mb-2 shadow-sm position-relative"
       style={{ cursor: "pointer" }}
       onClick={onClick}
     >
@@ -13,6 +13,66 @@ const PlaylistCard = ({ name, songCount, onClick }) => {
 
         {/* Cantidad de canciones */}
         <span className="badge bg-primary">{songCount} canciones</span>
+      </div>
+
+      {/* Menú contextual: tres puntos verticales */}
+      <div
+        className="dropdown position-absolute"
+        style={{ bottom: "10px", right: "10px" }}
+      >
+        <button
+          className="btn btn-dark btn-sm dropdown-toggle"
+          type="button"
+          id={`playlistMenu-${name}`}
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+          style={{
+            border: "none",
+            backgroundColor: "transparent",
+            boxShadow: "none",
+          }}
+          onClick={(e) => e.stopPropagation()} // Detener propagación
+        >
+          <span style={{ fontSize: "1.2rem", verticalAlign: "middle" }}>⋮</span>
+        </button>
+        <ul
+          className="dropdown-menu dropdown-menu-end"
+          aria-labelledby={`playlistMenu-${name}`}
+        >
+          <li>
+            <button
+              className="dropdown-item"
+              onClick={(e) => {
+                e.stopPropagation();
+                onDelete();
+              }}
+            >
+              Delete
+            </button>
+          </li>
+          <li>
+            <button
+              className="dropdown-item"
+              onClick={(e) => {
+                e.stopPropagation();
+                onEdit();
+              }}
+            >
+              Edit
+            </button>
+          </li>
+          <li>
+            <button
+              className="dropdown-item"
+              onClick={(e) => {
+                e.stopPropagation();
+                alert("Opción 3 seleccionada");
+              }}
+            >
+              Option 3
+            </button>
+          </li>
+        </ul>
       </div>
     </div>
   );
