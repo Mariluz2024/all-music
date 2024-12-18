@@ -7,12 +7,17 @@ import Playlists from "./Playlists.jsx";
 
 const Principal = () => {
   const [playlistId, setPlaylistId] = useState([]); // Estado para almacenar las canciones seleccionadas
+  const [songId, setSongId] = useState("");
 
   // Función para manejar las canciones emitidas desde Playlists
   const handlePlaylistClick = (playlistId) => {
     console.log("ID de playlist:", playlistId); // Mostrar canciones en la consola
     setPlaylistId(playlistId); // Actualizar el estado con las canciones seleccionadas
   };
+
+  const handlePlay = (songId) => {
+    setSongId(songId)
+  }
 
   return (
     <div className="container-fluid">
@@ -37,12 +42,12 @@ const Principal = () => {
         {/* Columna del medio: Lista de reproducción */}
         <div className="col-md-3 col-12 bg-info p-3">
           <h5 className="fw-bold">Lista de reproducción</h5>
-          <Playlist playlistId={playlistId} />
+          <Playlist playlistId={playlistId} onPlay={handlePlay} />
         </div>
 
         {/* Columna derecha: Player */}
         <div className="col-md-6 col-12 bg-light p-3">
-          <Player songs={playlistId} />
+          <Player songId={songId} />
         </div>
       </div>
     </div>
