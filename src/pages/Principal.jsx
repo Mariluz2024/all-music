@@ -16,8 +16,8 @@ const Principal = () => {
   };
 
   const handlePlay = (songId) => {
-    setSongId(songId)
-  }
+    setSongId(songId);
+  };
 
   return (
     <div className="container-fluid">
@@ -34,8 +34,19 @@ const Principal = () => {
       {/* Contenido principal */}
       <div className="row m-0 vh-100">
         {/* Columna izquierda: Listas de reproducción */}
-        <div className="col-md-3 col-12 bg-warning p-3">
+        <div className="col-md-3 col-12 bg-warning p-3 relative">
+          {/* Botón de agregar */}
+          <button
+            className="absolute top-2 right-2 bg-white text-warning rounded-full w-8 h-8 flex items-center justify-center shadow-lg hover:bg-gray-200"
+            onClick={() => console.log("Agregar nueva lista de reproducción")}
+          >
+            +
+          </button>
+
+          {/* Título */}
           <h5 className="fw-bold">Listas de reproducción</h5>
+
+          {/* Contenido */}
           <Playlists onPlaylistSelect={handlePlaylistClick} />
         </div>
 
