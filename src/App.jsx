@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Logo from "./components/Logo.jsx";
 import Navbar from "./components/Navbar.jsx";
+import Footer from "./components/Footer.jsx";
 import PrincipalPage from "./pages/PrincipalPage.jsx";
 import PlaylistCreatePage from "./pages/PlaylistCreatePage.jsx";
 import PlaylistEditPage from "./pages/PlaylistEditPage.jsx";
@@ -30,6 +31,7 @@ function App() {
             <Route path="/playlists/:id/edit" element={<PlaylistEditPage />} />
             <Route path="/songs/search" element={<SearchSongsPlaylistPage />} />
           </Routes>
+          <Footer  />
       </div>
     </Router>
   );
