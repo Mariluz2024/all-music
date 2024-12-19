@@ -8,7 +8,7 @@ import PrincipalPage from "./pages/PrincipalPage.jsx";
 import About from "./pages/AboutPage.jsx";
 import PlaylistCreatePage from "./pages/PlaylistCreatePage.jsx";
 import PlaylistEditPage from "./pages/PlaylistEditPage.jsx";
-import SearchSongsPlaylistPage from "./pages/SearchSongsPlaylistPage.jsx";
+import SearchSongsPlaylistPage from "./pages/SearchSongsPage.jsx";
 
 function App() {
 
