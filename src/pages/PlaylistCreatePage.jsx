@@ -1,10 +1,14 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 import { getData, postData } from "../api";
 
 const PlaylistCreatePage = () => {
   const [songs, setSongs] = useState([]); // Estado para almacenar las canciones disponibles
   const [selectedSongs, setSelectedSongs] = useState([]); // Estado para las canciones seleccionadas
   const [playlistName, setPlaylistName] = useState(""); // Estado para el nombre de la lista
+
+  const navigate = useNavigate();
 
   // Obtener las canciones disponibles desde el servidor
   useEffect(() => {
@@ -22,10 +26,11 @@ const PlaylistCreatePage = () => {
 
   // Manejar la selección/deselección de canciones
   const handleSongSelection = (songId) => {
-    setSelectedSongs((prevSelectedSongs) =>
-      prevSelectedSongs.includes(songId)
-        ? prevSelectedSongs.filter((id) => id !== songId) // Deseleccionar
-        : [...prevSelectedSongs, songId] // Seleccionar
+    setSelectedSongs(
+      (prevSelectedSongs) =>
+        prevSelectedSongs.includes(songId)
+          ? prevSelectedSongs.filter((id) => id !== songId) // Deseleccionar
+          : [...prevSelectedSongs, songId] // Seleccionar
     );
   };
 
@@ -48,6 +53,8 @@ const PlaylistCreatePage = () => {
       alert("Lista de reproducción creada con éxito.");
       setPlaylistName(""); // Limpiar el formulario
       setSelectedSongs([]);
+
+      navigate("/");
     } catch (error) {
       console.error("Error al crear la lista de reproducción:", error);
       alert("Hubo un error al crear la lista de reproducción.");
@@ -57,7 +64,9 @@ const PlaylistCreatePage = () => {
   return (
     <div className="row m-0 vh-100 justify-content-center align-items-center">
       <div className="col-md-8 bg-light p-5 rounded shadow">
-        <h3 className="fw-bold mb-4 text-center">Crear Lista de Reproducción</h3>
+        <h3 className="fw-bold mb-4 text-center">
+          Crear Lista de Reproducción
+        </h3>
 
         {/* Formulario */}
         <form onSubmit={handleSubmit}>
@@ -80,7 +89,10 @@ const PlaylistCreatePage = () => {
           {/* Canciones Disponibles */}
           <div className="mb-3">
             <label className="form-label">Canciones disponibles</label>
-            <div className="border p-3 rounded" style={{ maxHeight: "200px", overflowY: "auto" }}>
+            <div
+              className="border p-3 rounded"
+              style={{ maxHeight: "200px", overflowY: "auto" }}
+            >
               {songs.map((song) => (
                 <div key={song.id} className="form-check">
                   <input
@@ -90,7 +102,10 @@ const PlaylistCreatePage = () => {
                     checked={selectedSongs.includes(song.id)}
                     onChange={() => handleSongSelection(song.id)}
                   />
-                  <label htmlFor={`song-${song.id}`} className="form-check-label">
+                  <label
+                    htmlFor={`song-${song.id}`}
+                    className="form-check-label"
+                  >
                     {song.title} - {song.artist}
                   </label>
                 </div>
