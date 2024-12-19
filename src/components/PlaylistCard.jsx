@@ -12,7 +12,7 @@ const PlaylistCard = ({ name, songCount, onClick, onDelete, onEdit }) => {
         <h5 className="card-title mb-3" style={{ fontSize: 14}}>{name}</h5>
 
         {/* Cantidad de canciones */}
-        <span className="badge bg-primary align-self-start">
+        <span className="badge align-self-start" style={{background: '#AF4D98'}}>
           {songCount} canciones
         </span>
       </div>

@@ -101,6 +101,7 @@ const PlaylistEditPage = () => {
                     className="form-check-input"
                     checked={selectedSongs.includes(song.id)}
                     onChange={() => handleSongSelection(song.id)}
+                    style={{ accentColor: '#ff69b4' }} 
                   />
                   <label
                     htmlFor={`song-${song.id}`}
@@ -114,7 +115,7 @@ const PlaylistEditPage = () => {
           </div>
 
           {/* Save Changes Button */}
-          <button type="submit" className="btn btn-primary w-100">
+          <button type="submit" className="btn w-100" style={{background: '#AF4D98', color: "white"}}>
             Save Changes
           </button>
         </form>

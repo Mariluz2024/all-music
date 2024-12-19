@@ -93,7 +93,7 @@ const SearchSongsPlaylistPage = () => {
 
       {/* Campo de búsqueda */}
       <div
-        className="sticky-top bg-white py-3"
+        className="bg-white py-3"
         style={{ zIndex: 1, top: "70px" }} // Asegurar que sea fijo
       >
         <input

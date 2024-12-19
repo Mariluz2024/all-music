@@ -114,7 +114,7 @@ const PlaylistCreatePage = () => {
           </div>
 
           {/* Botón para crear la lista */}
-          <button type="submit" className="btn btn-primary w-100">
+          <button type="submit" className="btn w-100" style={{background: '#AF4D98', color: "white"}}>
             Crear Lista de Reproducción
           </button>
         </form>

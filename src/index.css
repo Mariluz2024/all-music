@@ -71,3 +71,20 @@ button:focus-visible {
 .dropdown-toggle::after {
   display: none !important;
 }
+
+input[type="checkbox"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+  cursor: pointer;
+}
+
+input[type="checkbox"]:checked {
+  background-color: #ff69b4; /* Cambia el color aquí */
+  border-color: #ff69b4;
+}

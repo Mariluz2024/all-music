@@ -24,15 +24,7 @@ const PrincipalPage = () => {
   return (
     <div className="row m-0 vh-100">
       {/* Columna izquierda: Listas de reproducción */}
-      <div className="col-md-3 col-12 bg-warning p-3 relative">
-        {/* Botón de agregar */}
-        <button
-          className="absolute top-2 right-2 bg-white text-warning rounded-full w-8 h-8 flex items-center justify-center shadow-lg hover:bg-gray-200"
-          onClick={() => navigate("/playlist/create")}
-        >
-          +
-        </button>
-
+      <div className="col-md-3 col-12 p-3 relative" style={{background: '#D66BA0'}}>
         {/* Título */}
         <h5 className="fw-bold">Listas de reproducción</h5>
 
@@ -41,12 +33,12 @@ const PrincipalPage = () => {
       </div>
 
       {/* Columna del medio: Lista de reproducción */}
-      <div className="col-md-3 col-12 bg-info p-3">
+      <div className="col-md-3 col-12 p-3"  style={{background: '#E5A9A9'}}>
         <Playlist playlistId={playlistId} onPlay={handlePlay} />
       </div>
 
       {/* Columna derecha: Player */}
-      <div className="col-md-6 col-12 bg-light p-3">
+      <div className="col-md-6 col-12 p-3"  style={{background: '#F4E4BA'}}>
         <Player songId={songId} />
       </div>
     </div>
