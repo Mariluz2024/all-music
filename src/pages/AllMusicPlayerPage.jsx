@@ -1,9 +1,13 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 import { getData, deleteData } from "../api"; // Importar la función getData
 import PlaylistCard from "../components/PlaylistCard"; // Importar el nuevo componente
 
 const AllMusicPlayerPage = ({ onPlaylistSelect }) => {
   const [playlists, setPlaylists] = useState([]); // Estado para almacenar los datos
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchPlaylists = async () => {
@@ -34,8 +38,7 @@ const AllMusicPlayerPage = ({ onPlaylistSelect }) => {
 
   // Función para editar una playlist
   const handleEditPlaylist = (playlistId) => {
-    console.log(`Editar playlist con ID: ${playlistId}`);
-    alert(`Editar playlist con ID: ${playlistId}`);
+    navigate(`/playlists/${playlistId}/edit`)
   };
 
   return (

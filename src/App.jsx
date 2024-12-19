@@ -5,6 +5,7 @@ import Logo from "./components/Logo.jsx";
 import Navbar from "./components/Navbar.jsx";
 import PrincipalPage from "./pages/PrincipalPage.jsx";
 import PlaylistCreatePage from "./pages/PlaylistCreatePage.jsx";
+import PlaylistEditPage from "./pages/PlaylistEditPage.jsx";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
             <Route path="/" element={<PrincipalPage />} />
             <Route path="/playlists" element={<PrincipalPage />} />
             <Route path="/playlist/create" element={<PlaylistCreatePage />} />
+            <Route path="/playlists/:id/edit" element={<PlaylistEditPage />} />
           </Routes>
       </div>
     </Router>

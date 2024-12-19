@@ -73,7 +73,7 @@ const PlaylistEditPage = () => {
           {/* Playlist Name */}
           <div className="mb-3">
             <label htmlFor="playlistName" className="form-label">
-              Playlist Name
+              Title
             </label>
             <input
               type="text"
