@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { getData, deleteData } from "../api"; // Importar la función getData
 import PlaylistCard from "../components/PlaylistCard"; // Importar el nuevo componente
 
-const Playlists = ({ onPlaylistSelect }) => {
+const AllMusicPlayerPage = ({ onPlaylistSelect }) => {
   const [playlists, setPlaylists] = useState([]); // Estado para almacenar los datos
 
   useEffect(() => {
@@ -54,4 +54,4 @@ const Playlists = ({ onPlaylistSelect }) => {
   );
 };
 
-export default Playlists;
+export default AllMusicPlayerPage;

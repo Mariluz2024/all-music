@@ -1,7 +1,7 @@
 import React from "react";
 
-const CreateListPage = () => {
+const PlaylistCreatePage = () => {
   return <div className="fw-bold text-white">Crear PlayList</div>;
 };
 
-export default CreateListPage;
+export default PlaylistCreatePage;
