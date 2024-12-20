@@ -1,44 +1,44 @@
 
 # All Music Application
 
-## Introduction
-All Music is a React-based web application created with Vite. The app allows users to manage playlists, search for songs, and create custom playlists. The application provides a modern user interface and integrates with a backend server to handle music data.
+## Introducción
+All Music es una aplicación web basada en React creada con Vite. La aplicación permite a los usuarios gestionar listas de reproducción, buscar canciones y crear listas personalizadas. Proporciona una interfaz de usuario moderna e integra un servidor backend para manejar los datos musicales.
 
-## Requirements
-To run the All Music application, ensure you have the following installed on your system:
-- Node.js (version 14 or higher)
-- npm (Node Package Manager) or yarn
-- A web browser (latest version)
+## Requisitos
+Para ejecutar la aplicación All Music, asegúrate de tener instalado lo siguiente en tu sistema:
+- Node.js (versión 14 o superior)
+- npm (Node Package Manager) o yarn
+- Un navegador web (última versión)
 
-## Installation
-Follow these steps to install the application:
+## Instalación
+Sigue estos pasos para instalar la aplicación:
 
-1. Clone the repository:
+1. Clona el repositorio:
    ```bash
    git clone https://github.com/Mariluz2024/all-music.git
    ```
-2. Navigate to the project directory:
+2. Navega al directorio del proyecto:
    ```bash
    cd all-music
    ```
-3. Install the dependencies:
+3. Instala las dependencias:
    ```bash
    npm install
    ```
 
-## Execution
-To run the application locally, follow these steps:
+## Ejecución
+Para ejecutar la aplicación localmente, sigue estos pasos:
 
-1. Start the development server:
+1. Inicia el servidor de desarrollo:
    ```bash
    npm run dev
    ```
-2. Open your browser and navigate to:
+2. Abre tu navegador y navega a:
    ```
-   http://localhost:5173
+   https://all-music-app.netlify.app/
    ```
 
-## Notes
-Ensure the backend server is running on `http://localhost:3000` to provide data for the application. You can use JSON Server or another API backend as required.
+## Notas
+Asegúrate de que el servidor backend esté ejecutándose en `https://all-music-server.onrender.com/` para proporcionar datos a la aplicación. Puedes usar JSON Server u otra API backend según sea necesario.
 
-Happy listening and managing your playlists with All Music!
+¡Disfruta escuchando y gestionando tus listas de reproducción con All Music!
